@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #F0F0F1; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  margin-top: 50px;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 14px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 19px;
+  color: #010001;
+  display: block;
+}
+
+.header {
+  z-index: 1;
+  background-color: #424243 !important;
+  padding-left: 30px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.selectedTab {
+  font-weight: bold;
+}
+
+.myTable {
+  margin-left: 7rem;
+  width: auto;
+}
+
+.nav-right {
+  justify-content: space-between;
+}
+
+.nav-item-right {
+  margin-right: 2rem;
+}

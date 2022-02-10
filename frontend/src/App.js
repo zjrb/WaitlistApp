@@ -1,11 +1,12 @@
 import React from "react";
 import {Routes, Route, Link} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import "./App.css"
 import Waitlist from "./components/waitlist";
 import AddToWaitlist from "./components/addToWaitlist";
 import Login from "./components/login";
 
+debugger
 function App() {
   const [user, setUser] = React.useState(null);
 
@@ -18,10 +19,16 @@ function App() {
   }
   return (
     <div className="App">
-      <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/login" className="navbar-brand">Kohinoor</a>
+      <div className="sidenav">
+        <a href="#" className="selectedTab">Waitlist</a>
+        <a href="#">Seated Guests</a>
+        <a href="#">Tables</a>
+        <a href="#">Insights</a>
+      </div>
+      <nav className="navbar navbar-expand navbar-dark bg-dark header nav-right">
+        <a href="/login" className="navbar-brand ml-4">Bombay House</a>
         <div className="navbar-nav mr-auto">
-          <li className="nav-item">
+          <li className="nav-item nav-item-right">
             { user ? (
               <a onClick={logout} className="nav-link" style={{cursor:'pointer'}}>
                 Logout {user.name}
@@ -37,7 +44,7 @@ function App() {
 
       <div className="container mt-3">
         <Routes>
-          <Route path="/welcome" element={<Waitlist/>} />
+          <Route path="/" element={<Waitlist/>} />
           
           <Route 
             path="/login"
