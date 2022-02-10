@@ -10,6 +10,7 @@ export default class WaitlistDAO {
     } = {}) {
         const waitlist = [
             {
+                "name": "Kyle",
                 "size": 3,
                 "numberInLine": 1,
                 "phone": "775-247-1257",
@@ -19,6 +20,7 @@ export default class WaitlistDAO {
 
             },
             {
+                "name": "Melanie",
                 "size": 2,
                 "numberInLine": 2,
                 "phone": "775-247-1257",
@@ -28,6 +30,7 @@ export default class WaitlistDAO {
 
             },
             {
+                "name": "Jake",
                 "size": 4,
                 "numberInLine": 3,
                 "phone": "775-247-1257",
