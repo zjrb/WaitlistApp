@@ -19,6 +19,7 @@ function App() {
   }
   return (
     <div className="App">
+      <AddToWaitlist/>
       <div className="sidenav">
         <a href="#" className="selectedTab">Waitlist</a>
         <a href="#">Seated Guests</a>
