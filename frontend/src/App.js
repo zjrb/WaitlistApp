@@ -5,7 +5,6 @@ import "./App.css"
 import Waitlist from "./components/waitlist";
 import AddToWaitlist from "./components/addToWaitlist";
 import Login from "./components/login";
-
 debugger
 function App() {
   const [user, setUser] = React.useState(null);
@@ -25,6 +24,8 @@ function App() {
         <a href="#">Tables</a>
         <a href="#">Insights</a>
       </div>
+      <div>
+  </div>
       <nav className="navbar navbar-expand navbar-dark bg-dark header nav-right">
         <a href="/login" className="navbar-brand ml-4">Bombay House</a>
         <div className="navbar-nav mr-auto">

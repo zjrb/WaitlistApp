@@ -3,6 +3,9 @@ import {Routes, Route, Link} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import WaitlistDataService from "../services/waitlist.js"
 import waitlist from "../services/waitlist.js";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 
 debugger
 const Waitlist = props => {
@@ -45,7 +48,13 @@ const Waitlist = props => {
               <td>{waitlist.quotedTime}</td>
               <td>{waitlist.numberInLine}</td>
               <td>{waitlist.status}</td>
-              <td>📲</td>
+              <td><div><Popup trigger={<button>Message</button>} 
+                position="left center">
+                  <div>Send a Message</div><br />
+                  <button>Table Ready</button><br /><br />
+                  <button>5 Minutes</button><br /><br />
+                  <button>Custom Message</button></Popup>
+              </div></td>
             </tr>
           )
         })}
