@@ -5,6 +5,10 @@ import WaitlistDataService from "../services/waitlist.js"
 import waitlist from "../services/waitlist.js";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import TableReadyMessage from "./Twilio Functions/tableReady.js";
+import SendCustomMessage from "./Twilio Functions/tableReady.js";
+import Modal from "./PopUpModalElements/Modal";
+
 
 
 debugger
@@ -14,6 +18,9 @@ const Waitlist = props => {
   useEffect(() => {
     retrieveWaitlist();
   }, []);
+
+  //for popup
+  const [isOpen, setIsOpen] = useState(false);
 
   const retrieveWaitlist = () => {
     WaitlistDataService.getAll()
@@ -51,9 +58,12 @@ const Waitlist = props => {
               <td><div><Popup trigger={<button>Message</button>} 
                 position="left center">
                   <div>Send a Message</div><br />
-                  <button>Table Ready</button><br /><br />
+                  <button onClick={TableReadyMessage}>Table Ready</button><br /><br />
                   <button>5 Minutes</button><br /><br />
-                  <button>Custom Message</button></Popup>
+                  <button onClick={SendCustomMessage}>Custom Message</button>
+                  <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
+                  </Popup>
+                  <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
               </div></td>
             </tr>
           )

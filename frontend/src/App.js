@@ -1,10 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import {Routes, Route, Link} from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 import Waitlist from "./components/waitlist";
 import AddToWaitlist from "./components/addToWaitlist";
 import Login from "./components/login";
+
 debugger
 function App() {
   const [user, setUser] = React.useState(null);
