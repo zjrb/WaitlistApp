@@ -43,7 +43,7 @@ function App() {
         </div>
       </nav>
 
-      <div className="container mt-3">
+      <div className="container mt-3 pageMain">
         <Routes>
           <Route path="/" element={<Waitlist/>} />
           
