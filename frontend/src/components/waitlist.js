@@ -5,10 +5,10 @@ import WaitlistDataService from "../services/waitlist.js"
 import waitlist from "../services/waitlist.js";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import TableReadyMessage from "./Twilio Functions/tableReady.js";
-import SendCustomMessage from "./Twilio Functions/tableReady.js";
+import TableReadyMessage from "./Twilio Functions/tableReady.cjs";
+import SendCustomMessage from "./Twilio Functions/tableReady.cjs";
 import Modal from "./PopUpModalElements/Modal";
-
+import styles from "./PopUpModalElements/Modal.module.css";
 
 
 debugger
@@ -55,15 +55,13 @@ const Waitlist = props => {
               <td>{waitlist.quotedTime}</td>
               <td>{waitlist.numberInLine}</td>
               <td>{waitlist.status}</td>
-              <td><div><Popup trigger={<button>Message</button>} 
+              <td><div><Popup trigger={<button className={styles.regBtn} >Message</button>} 
                 position="left center">
                   <div>Send a Message</div><br />
-                  <button onClick={TableReadyMessage}>Table Ready</button><br /><br />
-                  <button>5 Minutes</button><br /><br />
-                  <button onClick={SendCustomMessage}>Custom Message</button>
-                  <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
+                  <button className={styles.regBtn} onClick={TableReadyMessage}>Table Ready</button><br /><br />
+                  <button className={styles.regBtn}>5 Minutes</button><br /><br />
+                  <button className={styles.regBtn} onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
                   </Popup>
-                  <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
               </div></td>
             </tr>
           )
