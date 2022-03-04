@@ -20,32 +20,35 @@ function App() {
   return (
     <div className="App">
       <AddToWaitlist/>
-      <div className="sidenav">
-        <a href="#" className="selectedTab">Waitlist</a>
-        <a href="#">Seated Guests</a>
-        <a href="#">Tables</a>
-        <a href="#">Insights</a>
-      </div>
-      <div>
-  </div>
-      <nav className="navbar navbar-expand navbar-dark bg-dark header nav-right">
-        <a href="/login" className="navbar-brand ml-4">Bombay House</a>
-        <div className="navbar-nav mr-auto">
-          <li className="nav-item nav-item-right">
-            { user ? (
-              <a onClick={logout} className="nav-link" style={{cursor:'pointer'}}>
-                Logout {user.name}
-              </a>
-            ) : (
-              <Link to={"/login"} className="nav-link">
-                Login
-              </Link>
-            )}
-          </li>
+      <nav className="navbar navbar-invisible">
+        <div className="flex-nav">
+          <a href="/login" className="navbar-brand ml-4 big-nav">Bombay House</a>
+          <div className="navbar-nav mr-auto">
+            <li className="nav-item nav-item-right">
+              { user ? (
+                <a onClick={logout} className="nav-link med-nav" style={{cursor:'pointer'}}>
+                  Logout {user.name}
+                </a>
+              ) : (
+                <Link to={"/login"} className="nav-link med-nav">
+                  Login
+                </Link>
+              )}
+            </li>
+          </div>
         </div>
+        <div className="subNav">
+          <p className="subNav-item">Current</p>
+          <p className="subNav-item">Seating</p>
+          <p className="subNav-item">Reports</p>
+        </div>
+        <div className="subNav">
+          <hr className="activeTabLine"></hr>
+        </div>
+        <hr></hr>
       </nav>
 
-      <div className="container mt-3 pageMain">
+      <div className="customCon mt-3 pageMain">
         <Routes>
           <Route path="/" element={<Waitlist/>} />
           

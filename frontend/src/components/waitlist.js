@@ -37,25 +37,26 @@ const Waitlist = props => {
       <table class="table ml-5 myTable">
         <thead class="thead-dark">
           <tr class="thead">
+            <th className="col-md-1"></th>
+            <th className="col-md-1">Position</th>
             <th className="col-md-3">Guest Name</th>
             <th className="col-md-1">Party Size</th>
-            <th className="col-md-1">Time Waiting</th>
-            <th className="col-md-1">Quoted Wait Time</th>
-            <th className="col-md-1">Number</th>
-            <th className="col-md-3">Status</th>
-            <th className="col-md-2">Send Message</th>
+            <th className="col-md-1">Waiting</th>
+            <th className="col-md-1">Alert</th>
+            <th className="col-md-2">Last Text</th>
+            <th className="col-md-1"></th>
           </tr>
         </thead>
-        {waitlist.map((waitlist) => {
+        {waitlist.map((waitlist, index) => {
           return (
             <tr>
+              <td></td>
+              <td>{index + 1}</td>
               <td>{waitlist.name}</td>
               <td>{waitlist.size}</td>
               <td>{waitlist.waitingTime}</td>
-              <td>{waitlist.quotedTime}</td>
-              <td>{waitlist.numberInLine}</td>
-              <td>{waitlist.status}</td>
-              <td><div><Popup trigger={<button>Message</button>} 
+              
+              <td><div><Popup trigger={<button className=" btn beautifulButtons">Message</button>} 
                 position="left center">
                   <div>Send a Message</div><br />
                   <button onClick={TableReadyMessage}>Table Ready</button><br /><br />
@@ -63,8 +64,10 @@ const Waitlist = props => {
                   <button onClick={SendCustomMessage}>Custom Message</button>
                   <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
                   </Popup>
-                  <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
+                  {/* <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />} */}
               </div></td>
+
+              <td>{waitlist.status}</td>
             </tr>
             )
           })}

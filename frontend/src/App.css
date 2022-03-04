@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+body {
+  background-color: #14142b;
+  color: #ffffff;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,28 +42,6 @@
   }
 }
 
-.sidenav {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 160px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #F0F0F1; /* Black */
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px;
-  margin-top: 50px;
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 14px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 19px;
-  color: #010001;
-  display: block;
-}
-
 .header {
   z-index: 1;
   background-color: #424243 !important;
@@ -72,31 +55,25 @@
 }
 
 .myTable {
-  margin-left: 7rem;
-  width: auto;
-}
-
-.nav-right {
-  justify-content: space-between;
-}
-
-.nav-item-right {
-  margin-right: 2rem;
+  margin: auto;
+  background-color: #ffffff;
 }
 
 .btn-zindex {
   z-index: 1;
   position: absolute;
-  right: 50px;
+  right: 250px;
   top: 75px;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
+  border-radius: 1.5rem;
   text-align: center;
   font-size: 25px;
-  vertical-align: middle;
-  /* line-height: 0; */
-  padding: 0 0 0 0 !important;
+  background-color: #b7570b;
+  border-color: black;
+}
+
+.btn-zindex:hover {
+  background-color: #d2921f;
+  border-color: black;
 }
 
 .drawar {
@@ -128,4 +105,77 @@
 
 .fullWidthInput {
   width: 100%;
+}
+
+.navbar {
+  flex-direction: column;
+}
+
+.flex-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.flex-nav a {
+  color: #ffffff;
+}
+
+.big-nav {
+  font-size: 50px;
+}
+
+.med-nav {
+  font-size: 22px;
+}
+.subNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  width: 80%;
+  font-size: 26px;
+  font-weight: lighter;
+  height: fit-content;
+}
+
+.subNav-item {
+  padding-right: 50px;
+  margin-bottom: 0px;
+}
+
+hr {
+  width: 80%;
+  height: 3px !important;
+  margin-top: 0;
+}
+
+.activeTabLine {
+  margin-bottom: 0;
+  margin-top: 10px;
+  width: 5%;
+  justify-self: left;
+}
+
+.customCon {
+  width: 80%;
+  padding-right: var(--bs-gutter-x,.75rem);
+  padding-left: var(--bs-gutter-x,.75rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.thead-dark {
+  background-color: #b7570b;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.beautifulButtons {
+  background-color: #4700ab;
+  color: #ffffff;
+}
+
+.beautifulButtons:hover {
+  color: #ffffff;
 }

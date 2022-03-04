@@ -14,7 +14,7 @@ function AddToWaitlist() {
   }
   return (
     <div>
-      <div className="btn btn-primary btn-zindex" onClick={expand}>+</div>
+      <div className="btn btn-primary btn-zindex" onClick={expand}>Add New Party</div>
       <div className="drawar" id="sideDrawar">
         <h4>Add a Party to the waitlist.</h4>
         <form className="flexForm">
