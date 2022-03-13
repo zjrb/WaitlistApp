@@ -9,4 +9,7 @@ export default class WaitlistController {
         }
         res.json(response)
     }
+    static async addToWaitlist(req, res, next) {
+        
+    }
 }
