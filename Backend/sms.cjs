@@ -5,6 +5,7 @@ const accountSid = "AC75b7bed2978616db401c0befff90fa5c";
 const authToken = "1e6ab3a46c80954ebcf3efa525b57333";
 const client = require('twilio')(accountSid, authToken);
 
+
 client.messages
   .create({
      body: 'Kennedy! It is your lucky day! You are 5th on the waitlist!! (this was sent from the code!)',
