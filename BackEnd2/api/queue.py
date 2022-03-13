@@ -6,7 +6,7 @@ import uvicorn
 from db.models import Restaurant, Queue
 from typing import Optional, List
 from fastapi import FastAPI, Path, Depends, HTTPException
-
+import datetime
 from utils.queue import get_queues, get_by_phone_number
 
 import math
@@ -35,6 +35,20 @@ async def get_queue(db: DBSessionMiddleware = Depends(get_db)):
 @router.get("/queue/getCurrentQueue")
 async def get_current_queue(db: DBSessionMiddleware = Depends(get_db)):
     queue = db.query(Queue).order_by(Queue.position).first()
-    db.remove(queue)
+    db.delete(queue)
+    db.commit()
     return queue
+
+@router.get("/queue/getTimeInQueue/{phone_number}")
+async def get_time_in_queue(phone_number: str, db: DBSessionMiddleware = Depends(get_db)):
+    queue = get_by_phone_number(db, phone_number)
+    return queue.created_at.time().minute
+
+@router.get("/queue/getAverageTimeInQueue")
+async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
+    queues = get_queues(db)
+    total_time = 0
+    for queue in queues:
+        total_time += datetime. queue.created_at.time().minute
+    return total_time/len(queues)
 
