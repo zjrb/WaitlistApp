@@ -54,11 +54,6 @@ body {
   font-weight: bold;
 }
 
-.myTable {
-  margin: auto;
-  background-color: #ffffff;
-}
-
 .btn-zindex {
   z-index: 1;
   position: absolute;
@@ -158,17 +153,11 @@ hr {
 }
 
 .customCon {
-  width: 80%;
+  width: 100%;
   padding-right: var(--bs-gutter-x,.75rem);
   padding-left: var(--bs-gutter-x,.75rem);
   margin-right: auto;
   margin-left: auto;
-}
-
-.thead-dark {
-  background-color: #b7570b;
-  color: #ffffff;
-  font-size: 24px;
 }
 
 .beautifulButtons {
@@ -178,4 +167,93 @@ hr {
 
 .beautifulButtons:hover {
   color: #ffffff;
+}
+
+.sidebar-element {
+  font-size: 26px;
+  margin-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.btn-purple {
+  background-color: #a996ff;
+  border-radius: 10px;
+  color: #5413b5;
+  font-weight: bold;
+  padding: .75rem;
+  margin-top: 120px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.flex-col p {
+  text-align: left;
+  padding-left: 40px;
+}
+
+.buttons-con {
+  margin-top: 120px;
+}
+
+.button-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-color: #262338;
+  width: 45%;
+  border-radius: 15px;
+}
+
+.mini-logo-div {
+  background-color: #a996ff;
+  height: 80px;
+  width: 80px;
+  border-radius: 20px;
+  margin-top: 20px;
+}
+
+.button-div-item {
+  text-align: left;
+  margin-left: 3rem;
+  padding-top: 10px;
+}
+
+.div-left {
+  margin-right: 10%;
+}
+
+.wait-time {
+  font-size: 24px;
+}
+
+.minutes {
+  font-size: 52px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+}
+
+.button-div-item-2 {
+  background-color: #4700ab;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 55px;
+  line-height: 100%;
+}
+
+table {
+  color: white !important;
+  font-size: 24px;
+}
+
+.bigHeader {
+  font-size: 52px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 45px;
+  margin-bottom: 20px;
 }

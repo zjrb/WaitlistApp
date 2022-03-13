@@ -34,29 +34,28 @@ const Waitlist = props => {
 
   return (
     <div className="App">
-      <table class="table ml-5 myTable">
+      <div className="bigHeader">Waitlist</div>
+      <table class="table ml-5">
         <thead class="thead-dark">
           <tr class="thead">
-            <th className="col-md-1"></th>
-            <th className="col-md-1">Position</th>
-            <th className="col-md-3">Guest Name</th>
+            <th className="col-md-1">#</th>
+            <th className="col-md-3">Name</th>
             <th className="col-md-1">Party Size</th>
-            <th className="col-md-1">Waiting</th>
+            <th className="col-md-1">Time in Queue</th>
             <th className="col-md-1">Alert</th>
             <th className="col-md-2">Last Text</th>
-            <th className="col-md-1"></th>
+            <th className="col-md-1"><input type="checkbox"/></th>
           </tr>
         </thead>
         {waitlist.map((waitlist, index) => {
           return (
-            <tr>
-              <td></td>
+            <tr className="tall-row">
               <td>{index + 1}</td>
               <td>{waitlist.name}</td>
               <td>{waitlist.size}</td>
               <td>{waitlist.waitingTime}</td>
               
-              <td><div><Popup trigger={<button className=" btn beautifulButtons">Message</button>} 
+              <td><div><Popup trigger={<button className=" btn btn-primary">Send Text</button>} 
                 position="left center">
                   <div>Send a Message</div><br />
                   <button onClick={TableReadyMessage}>Table Ready</button><br /><br />
@@ -64,10 +63,10 @@ const Waitlist = props => {
                   <button onClick={SendCustomMessage}>Custom Message</button>
                   <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
                   </Popup>
-                  {/* <button onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />} */}
               </div></td>
 
               <td>{waitlist.status}</td>
+              <td><input type="checkbox"/></td>
             </tr>
             )
           })}
