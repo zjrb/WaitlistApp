@@ -25,7 +25,7 @@ function App() {
   }
   return (
     <div className="App">      
-      <div className="customCon mt-3 pageMain">
+      <div >
 
         <Routes>  
           <Route

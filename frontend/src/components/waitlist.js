@@ -44,7 +44,8 @@ const Waitlist = props => {
             <th className="col-md-1">Time in Queue</th>
             <th className="col-md-1">Alert</th>
             <th className="col-md-2">Last Text</th>
-            <th className="col-md-1"><input type="checkbox"/></th>
+            <th className="blueSeatText">Seat</th>
+            <th className="redRemoveText">Remove</th>
           </tr>
         </thead>
         {waitlist.map((waitlist, index) => {
@@ -57,7 +58,7 @@ const Waitlist = props => {
               
               <td><div><Popup trigger={<button className=" btn btn-primary">Send Text</button>} 
                 position="left center">
-                  <div>Send a Message</div><br />
+                  <div className="blackText">Send a Message</div><br />
                   <button className={styles.regBtn} onClick={TableReadyMessage}>Table Ready</button><br /><br />
                   <button className={styles.regBtn}>5 Minutes</button><br /><br />
                   <button className={styles.regBtn} onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
@@ -65,7 +66,8 @@ const Waitlist = props => {
               </div></td>
 
               <td>{waitlist.status}</td>
-              <td><input type="checkbox"/></td>
+              <td>✔</td>
+              <td>❌</td>
             </tr>
             )
           })}
