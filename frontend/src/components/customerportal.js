@@ -5,13 +5,17 @@ import WaitlistDataService from "../services/waitlist.js"
 import waitlist from "../services/waitlist.js";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import TableReadyMessage from "./Twilio Functions/tableReady.js";
-import SendCustomMessage from "./Twilio Functions/tableReady.js";
 import Modal from "./PopUpModalElements/Modal";
 
 function CustomerPortal(){
     return (
-        <p>hello</p>
+        <div className="customer-portal">
+            <p className="header-thingy">ZipThru</p>
+            <div className="big-div">
+                <div className="header">Bombay House</div>
+            </div>
+            <p>mas stuff</p>
+        </div>
     )
 }
 export default CustomerPortal
