@@ -1,3 +1,4 @@
+from xmlrpc.client import DateTime
 import fastapi
 import os
 from dotenv import load_dotenv
@@ -48,7 +49,10 @@ async def get_time_in_queue(phone_number: str, db: DBSessionMiddleware = Depends
 async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
     total_time = 0
+    date_format_str = '%d/%m/%Y %H:%M:%S.%f'
+    if(len(queues) == 0):
+        return 0
     for queue in queues:
-        total_time += datetime. queue.created_at.time().minute
+        total_time +=  datetime.datetime.now().time - queue.created_at
     return total_time/len(queues)
 
