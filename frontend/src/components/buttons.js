@@ -7,10 +7,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import Modal from "./PopUpModalElements/Modal";
 
-function Buttons(){
-    async function SwapWaitlist() {
-        
-    }
+function Buttons(props){
     return (
         <div className="buttons-con row">
             <div className="col-6 button-div div-left">
@@ -18,7 +15,7 @@ function Buttons(){
                 <div className="button-div-item wait-time">Average Wait Time:</div>
                 <div className="button-div-item minutes">10 Minutes</div>
             </div>
-            <div className="col-6 button-div" onClick={SwapWaitlist}>
+            <div className="col-6 button-div" onClick={() => props.changeComponent(false)}>
                 <div className="mini-logo-div button-div-item button-div-item-2">+</div>
                 <div className="button-div-item wait-time">Add a</div>
                 <div className="button-div-item minutes">New Party</div>

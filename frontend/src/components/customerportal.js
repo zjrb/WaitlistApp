@@ -9,7 +9,13 @@ import Modal from "./PopUpModalElements/Modal";
 
 function CustomerPortal(){
     return (
-        <p>hello</p>
+        <div className="customer-portal">
+            <p className="header-thingy">ZipThru</p>
+            <div className="big-div">
+                <div className="header">Bombay House</div>
+            </div>
+            <p>mas stuff</p>
+        </div>
     )
 }
 export default CustomerPortal
