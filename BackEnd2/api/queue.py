@@ -35,6 +35,8 @@ async def get_queue(db: DBSessionMiddleware = Depends(get_db)):
 @router.get("/queue/getCurrentQueue")
 async def get_current_queue(db: DBSessionMiddleware = Depends(get_db)):
     queue = db.query(Queue).order_by(Queue.position).first()
+    if queue is None:
+        return {"message": "No one in queue"}
     db.delete(queue)
     db.commit()
     return queue
@@ -49,6 +51,6 @@ async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
     total_time = 0
     for queue in queues:
-        total_time += datetime. queue.created_at.time().minute
+        #total_time += datetime. queue.created_at.time().minute
     return total_time/len(queues)
 
