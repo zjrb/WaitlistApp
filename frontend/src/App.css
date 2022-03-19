@@ -172,7 +172,7 @@ hr {
 }
 
 .sidebar-element {
-  font-size: 26px;
+  font-size: 18px;
   margin-top: 40px;
   padding-left: 20px;
   padding-right: 20px;
@@ -184,7 +184,6 @@ hr {
   color: #5413b5;
   font-weight: bold;
   padding: .75rem;
-  margin-top: 120px;
 }
 
 .flex-col {
@@ -199,7 +198,7 @@ hr {
 }
 
 .buttons-con {
-  margin-top: 120px;
+  margin-top: 70px;
 }
 
 .button-div {
@@ -213,8 +212,8 @@ hr {
 
 .mini-logo-div {
   background-color: #a996ff;
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border-radius: 20px;
   margin-top: 20px;
 }
@@ -234,7 +233,7 @@ hr {
 }
 
 .minutes {
-  font-size: 52px;
+  font-size: 40px;
   padding-top: 0px;
   padding-bottom: 20px;
 }
@@ -243,21 +242,19 @@ hr {
   background-color: #4700ab;
   text-align: center;
   vertical-align: middle;
-  font-size: 55px;
+  font-size: 35px;
   line-height: 100%;
 }
 
 table {
   color: white !important;
-  font-size: 24px;
 }
 
 .bigHeader {
-  font-size: 52px;
+  font-size: 38px;
   font-weight: bold;
   text-align: left;
-  margin-top: 45px;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .header-thingy {
