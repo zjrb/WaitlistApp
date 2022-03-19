@@ -5,8 +5,8 @@ import WaitlistDataService from "../services/waitlist.js"
 import waitlist from "../services/waitlist.js";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import TableReadyMessage from "./Twilio Functions/tableReady.js";
-import SendCustomMessage from "./Twilio Functions/tableReady.js";
+import TableReadyMessage from "./Twilio Functions/tableReady.cjs";
+import SendCustomMessage from "./Twilio Functions/tableReady.cjs";
 import Modal from "./PopUpModalElements/Modal";
 
 function Buttons(){
