@@ -136,12 +136,13 @@
     font-size: 0.8rem;
     border: none;
     color: #2c3e50;
-    background: #2abd4f;
+    background: #0D6EFD;
     transition: all 0.25s ease;
+    color: white;
   }
 
   .regBtn:hover {
     box-shadow: none;
     transform: none;
-    background: rgb(128, 223, 175);
+    background: #0a6afa;
   }
