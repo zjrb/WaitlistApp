@@ -63,3 +63,12 @@ async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
         return (total_time/60) // (len(queues))
     else:
         return 0
+
+@router.delete("/queue/{phone_number}")
+async def delete_queue(phone_number: str, db: DBSessionMiddleware = Depends(get_db)):
+    queue = get_by_phone_number(db, phone_number)
+    if queue is None:
+        raise HTTPException(status_code=404, detail="Person not found")
+    db.delete(queue)
+    db.commit()
+    return {"message": "Person removed from queue"}
