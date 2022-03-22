@@ -15,7 +15,21 @@ function Buttons(props){
 
     useEffect(() => {
         retrieveAverageWaitTime();
-      }, []);
+        console.log(`initializing button refresh interval`);
+        const interval = setInterval(() => {
+          updateTime();
+          retrieveAverageWaitTime();
+        }, 10000);
+      
+        return () => {
+          console.log(`clearing button refresh interval`);
+          clearInterval(interval);
+        };
+    }, []);
+
+    const updateTime = () => {
+    console.log(new Date())
+    }
 
     const retrieveAverageWaitTime = () => {
         WaitlistDataService.GetAverage()

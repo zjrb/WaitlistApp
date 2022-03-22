@@ -17,20 +17,42 @@ const Waitlist = props => {
 
   useEffect(() => {
     retrieveWaitlist();
+    console.log(`initializing waitlist refresh interval`);
+    const interval = setInterval(() => {
+      updateTime();
+      retrieveWaitlist();
+    }, 10000);
+  
+    return () => {
+      console.log(`clearing waitlist refresh interval`);
+      clearInterval(interval);
+    };
   }, []);
 
   //for popup
   const [isOpen, setIsOpen] = useState(false);
 
+  const updateTime = () => {
+    console.log(new Date())
+  }
+
   const retrieveWaitlist = () => {
     WaitlistDataService.getAll()
     .then(response => {
-      console.log(response.data)
       SetWaitlist(response.data)
     }).catch(e => {
       console.log(e)
     })
   };
+
+  const deleteUser = function (phone) {
+    console.log(phone)
+    WaitlistDataService.delete(phone)
+    .then(response => {
+      console.log(response.data)
+      retrieveWaitlist();
+    })
+  }
 
   return (
     <div className="App">
@@ -40,10 +62,8 @@ const Waitlist = props => {
           <tr class="thead">
             <th className="col-md-1">#</th>
             <th className="col-md-3">Name</th>
-            <th className="col-md-1">Party Size</th>
-            <th className="col-md-1">Time in Queue</th>
-            <th className="col-md-1">Alert</th>
-            <th className="col-md-2">Last Text</th>
+            <th className="col-md-2">Party Size</th>
+            <th className="col-md-2">Time in Queue</th>
             <th className="blueSeatText">Seat</th>
             <th className="redRemoveText">Remove</th>
           </tr>
@@ -57,18 +77,8 @@ const Waitlist = props => {
 
               <td>{waitlist.time_in_queue}</td>
               
-              <td><div><Popup trigger={<button className=" btn btn-primary">Send Text</button>} 
-                position="left center">
-                  <div className="blackText">Send a Message</div><br />
-                  <button className={styles.regBtn} onClick={TableReadyMessage}>Table Ready</button><br /><br />
-                  <button className={styles.regBtn}>5 Minutes</button><br /><br />
-                  <button className={styles.regBtn} onClick={() => setIsOpen(true)}>Custom Message</button>{isOpen && <Modal setIsOpen={setIsOpen} />}
-                  </Popup>
-              </div></td>
-
-              <td>{waitlist.status}</td>
-              <td>✔</td>
-              <td>❌</td>
+              <td onClick={() => deleteUser(waitlist.phone_number)}>✔</td>
+              <td onClick={() => deleteUser(waitlist.phone_number)}>❌</td>
             </tr>
             )
           })}

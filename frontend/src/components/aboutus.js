@@ -18,23 +18,23 @@ function AboutUs() {
                     </div>
                     <div className="col-1"></div>
                     <div className="col-9">
+                      <div>ZipThru changes the restaurant industry by empowering restaurants to give diners more transparency and better accuracy with waitlist times.
+                        <br />
+                        We offer restaurants a waitlist management system that allows hosts to:
+                        <ul>
+                          <li>quickly add quests to a list</li>
+                          <li>track wait times</li>
+                          <li>handle rush hour chaos</li>
+                        </ul>
+                        <br /><br /><br /><br /><br />
+                        Special thank you to the Rollins Center for Entrepreneurship and Technology for the opportunity to present our app.
+                      </div>
+                    <img src="Rollins_ink_rgb.svg" />
                     </div>
                 </div>
             </div>
 
-            <div>ZipThru changes the restaurant industry by empowering restaurants to give diners more transparency and better accuracy with waitlist times.
-              <br />
-              We offer restaurants a waitlist management system that allows hosts to:
-              <ul>
-                <li>quickly add quests to a list</li>
-                <li>track wait times</li>
-                <li>handle rush hour chaos</li>
-              </ul>
-              <br /><br /><br /><br /><br />
-              Special thank you to the Rollins Center for Entrepreneurship and Technology for the opportunity to present our app.
-
-            </div>
-            <img src="Rollins_ink_rgb.svg" />
+            
 
         </div>
 );

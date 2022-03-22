@@ -11,6 +11,9 @@ class WaitlistDataService {
     GetAverage() {
         return http.get("/queue/getAverageTimeInQueue")
     }
+    delete(phone) {
+        return http.delete("/queue/" + phone)
+    }
 }
 
 export default new WaitlistDataService();
