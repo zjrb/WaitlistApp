@@ -178,6 +178,21 @@ hr {
   padding-right: 20px;
 }
 
+.sidebar-element-active {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.header-element {
+  color: white;
+  width: auto;
+}
+
+.sidebar-element a {
+  color: white;
+  text-decoration: none;
+}
+
 .btn-purple {
   background-color: #a996ff;
   border-radius: 10px;
@@ -313,4 +328,38 @@ table {
 
 .blackText {
   color: black;
+}
+
+.flex-about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #262338;
+  padding: 1rem;
+  margin-top: 40px;
+  border-radius: 15px;;
+}
+
+.bigtitle {
+  align-self: flex-start;
+  font-size: 16px;
+}
+
+.biggerTitle {
+  font-size: 20px;
+  font-style: italic;
+}
+
+.ulcustom {
+  width: 25%;
+  align-self: center;
+}
+
+.about-container-item {
+  margin-top: 1.5rem;
+
+}
+
+.smallerLogo {
+  width: 75%;
 }

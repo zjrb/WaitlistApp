@@ -32,11 +32,9 @@ class Sidebar extends React.Component {
             <div className="customCon mt-3 pageMain">
                 <div className="row">
                     <div className="col-2 flex-col">
-                    <div className="btn btn-primary btn-purple sidebar-element">Bombay House</div>
-                    <p className="sidebar-element">About us</p>
-                    <p className="sidebar-element">Home</p>
-                    <p className="sidebar-element">Seated</p>
-                    <p className="sidebar-element">Reports</p>
+                    <div className="btn-purple sidebar-element header-element">ZipThru<img src={process.env.PUBLIC_URL + "/favicon.ico"}></img></div>
+                        <p className="sidebar-element sidebar-element-active">Home</p>
+                        <p className="sidebar-element" ><a href="/aboutUs">About Us</a></p>
                     </div>
                     <div className="col-1"></div>
                     <div className="col-9">
