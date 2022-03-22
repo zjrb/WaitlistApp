@@ -72,3 +72,9 @@ async def delete_queue(phone_number: str, db: DBSessionMiddleware = Depends(get_
     db.delete(queue)
     db.commit()
     return {"message": "Person removed from queue"}
+@router.get("/queue/{phone_number}")
+async def get_queue_by_phone_number(phone_number: str, db: DBSessionMiddleware = Depends(get_db)):
+    queue = get_by_phone_number(db, phone_number)
+    if queue is None:
+        raise HTTPException(status_code=404, detail="Person not found")
+    return queue
