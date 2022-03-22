@@ -34,8 +34,8 @@ async def put_user_in_queue(phone_number : str, name : str, partySize : int, db:
 async def get_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
     for queue in queues:
-        time = datetime.now() - queue.created_at
-        queue.time = math.floor(time.seconds / 60)
+        time = datetime.datetime.now() - queue.created_at
+        queue.time_in_queue = math.floor(time.seconds / 60)
     return queues 
 
 @router.get("/queue/getCurrentQueue")
@@ -56,7 +56,7 @@ async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
     total_time = 0
     for queue in queues:
-        c = datetime.datetime.now() - queue.created_at
+        c = datetime.datetime.now()- queue.created_at
         total_time+=c.seconds
         print(total_time)
     return total_time*60/len(queues)
