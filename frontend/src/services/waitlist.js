@@ -5,7 +5,11 @@ class WaitlistDataService {
         return http.get("/queue");
     }
     AddCustomer(fname, phone, size, preference) {
-        return http.post("/queue", {phone, fname, size})
+        size = parseInt(size)
+        return http.post("/queue?phone_number=" + phone + "&name=" + fname + "&partySize=" + size)
+    }
+    GetAverage() {
+        return http.get("/queue/getAverageTimeInQueue")
     }
 }
 

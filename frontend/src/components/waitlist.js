@@ -11,9 +11,9 @@ import Modal from "./PopUpModalElements/Modal";
 import styles from "./PopUpModalElements/Modal.module.css";
 
 
-
 const Waitlist = props => {
   const [waitlist, SetWaitlist] = useState([])
+  
 
   useEffect(() => {
     retrieveWaitlist();
@@ -26,7 +26,7 @@ const Waitlist = props => {
     WaitlistDataService.getAll()
     .then(response => {
       console.log(response.data)
-      SetWaitlist(response.data.waitlist)
+      SetWaitlist(response.data)
     }).catch(e => {
       console.log(e)
     })
@@ -51,10 +51,11 @@ const Waitlist = props => {
         {waitlist.map((waitlist, index) => {
           return (
             <tr className="tall-row">
-              <td>{index + 1}</td>
+              <td>{waitlist.position + 1}</td>
               <td>{waitlist.name}</td>
-              <td>{waitlist.size}</td>
-              <td>{waitlist.waitingTime}</td>
+              <td>{waitlist.partySize}</td>
+
+              <td>{waitlist.time_in_queue}</td>
               
               <td><div><Popup trigger={<button className=" btn btn-primary">Send Text</button>} 
                 position="left center">

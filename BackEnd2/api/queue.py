@@ -8,11 +8,14 @@ from typing import Optional, List
 from fastapi import FastAPI, Path, Depends, HTTPException
 import datetime
 from utils.queue import get_queues, get_by_phone_number
-
 import math
 import random  
 from db.db_setup import get_db
 from utils.queue import get_by_phone_number
+
+
+import os
+
 router = fastapi.APIRouter()
 
 #function to create a new restaurant note that the restaurant id is unique and is auto incremented
@@ -30,14 +33,18 @@ async def put_user_in_queue(phone_number : str, name : str, partySize : int, db:
 @router.get("/queue")
 async def get_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
+    for queue in queues:
+        time = datetime.datetime.now() - queue.created_at
+        queue.time_in_queue = math.floor(time.seconds / 60)
     return queues 
 
 @router.get("/queue/getCurrentQueue")
 async def get_current_queue(db: DBSessionMiddleware = Depends(get_db)):
     queue = db.query(Queue).order_by(Queue.position).first()
-    db.delete(queue)
-    db.commit()
+    if queue is None:
+        return {"message": "No one in queue"}
     return queue
+
 
 @router.get("/queue/getTimeInQueue/{phone_number}")
 async def get_time_in_queue(phone_number: str, db: DBSessionMiddleware = Depends(get_db)):
@@ -48,7 +55,11 @@ async def get_time_in_queue(phone_number: str, db: DBSessionMiddleware = Depends
 async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
     total_time = 0
-    for queue in queues:
-        total_time += datetime. queue.created_at.time().minute
-    return total_time/len(queues)
-
+    if len(queues) > 0:
+        for queue in queues:
+            c = datetime.datetime.now() - queue.created_at
+            total_time+=c.seconds
+            print(total_time)
+        return (total_time/60) // (len(queues))
+    else:
+        return 0
