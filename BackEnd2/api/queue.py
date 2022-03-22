@@ -55,8 +55,11 @@ async def get_time_in_queue(phone_number: str, db: DBSessionMiddleware = Depends
 async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
     total_time = 0
-    for queue in queues:
-        c = datetime.datetime.now()- queue.created_at
-        total_time+=c.seconds
-        print(total_time)
-    return total_time*60/len(queues)
+    if len(queues) > 0:
+        for queue in queues:
+            c = datetime.datetime.now() - queue.created_at
+            total_time+=c.seconds
+            print(total_time)
+        return (total_time/60) // (len(queues))
+    else:
+        return 0

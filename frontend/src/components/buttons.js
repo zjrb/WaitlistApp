@@ -11,12 +11,27 @@ import SendCustomMessage from "./Twilio Functions/tableReady.cjs";
 import Modal from "./PopUpModalElements/Modal";
 
 function Buttons(props){
+    const [avgWaitTime, SetAvg] = useState()
+
+    useEffect(() => {
+        retrieveAverageWaitTime();
+      }, []);
+
+    const retrieveAverageWaitTime = () => {
+        WaitlistDataService.GetAverage()
+        .then(response => {
+          console.log(response.data)
+          SetAvg(response.data)
+        }).catch(e => {
+          console.log(e)
+        })
+      }
     return (
         <div className="buttons-con row">
             <div className="col-6 button-div div-left">
                 <div className="mini-logo-div button-div-item"></div>
                 <div className="button-div-item wait-time">Average Wait Time:</div>
-                <div className="button-div-item minutes">10 Minutes</div>
+                <div className="button-div-item minutes">{avgWaitTime} Minutes</div>
             </div>
             <div className="col-6 button-div" onClick={() => props.changeComponent(false)}>
                 <div className="mini-logo-div button-div-item button-div-item-2">+</div>

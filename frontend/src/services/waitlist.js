@@ -8,6 +8,9 @@ class WaitlistDataService {
         size = parseInt(size)
         return http.post("/queue?phone_number=" + phone + "&name=" + fname + "&partySize=" + size)
     }
+    GetAverage() {
+        return http.get("/queue/getAverageTimeInQueue")
+    }
 }
 
 export default new WaitlistDataService();
