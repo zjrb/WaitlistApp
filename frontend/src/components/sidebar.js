@@ -33,6 +33,7 @@ class Sidebar extends React.Component {
                 <div className="row">
                     <div className="col-2 flex-col">
                     <div className="btn btn-primary btn-purple sidebar-element">Bombay House</div>
+                    <p className="sidebar-element">About us</p>
                     <p className="sidebar-element">Home</p>
                     <p className="sidebar-element">Seated</p>
                     <p className="sidebar-element">Reports</p>

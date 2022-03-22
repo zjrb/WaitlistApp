@@ -8,6 +8,7 @@ import Login from "./components/login";
 import Buttons from "./components/buttons";
 import CustomerPortal from "./components/customerportal";
 import Sidebar from "./components/sidebar";
+import AboutUs from "./components/aboutus";
 
 
 function App() {
@@ -37,7 +38,12 @@ function App() {
             exact
             path="/"
             element={<Sidebar/>}
-          />   
+          />
+          <Route
+            exact
+            path="/aboutUs"
+            element={<AboutUs/>}
+          /> 
           <Route 
             path="/login"
             render={(props) => (
