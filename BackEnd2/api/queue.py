@@ -51,7 +51,8 @@ async def get_average_time_in_queue(db: DBSessionMiddleware = Depends(get_db)):
     queues = get_queues(db)
     total_time = 0
     for queue in queues:
-        #total_time += datetime. queue.created_at.time().minute
-        pass
-    return total_time/len(queues)
+        c = datetime.datetime.now() - queue.created_at
+        total_time+=c.seconds
+        print(total_time)
+    return total_time*60/len(queues)
 
