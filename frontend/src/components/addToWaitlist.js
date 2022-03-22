@@ -19,7 +19,7 @@ class AddToWaitlist extends React.Component {
     // get our form data out of state
     const { name, phone, size, preference } = this.state;
     WaitlistDataService.AddCustomer(name, phone, size, preference)
-    
+    this.props.changeComponent(true)
   }
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });

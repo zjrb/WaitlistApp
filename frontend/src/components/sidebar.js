@@ -12,7 +12,7 @@ import Buttons from "./buttons.js";
 import Waitlist from "./waitlist.js";
 import AddToWaitlist from "./addToWaitlist.js";
 
-debugger
+
 class Sidebar extends React.Component {
     constructor(props) {
         super(props)

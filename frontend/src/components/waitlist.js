@@ -26,7 +26,7 @@ const Waitlist = props => {
     WaitlistDataService.getAll()
     .then(response => {
       console.log(response.data)
-      SetWaitlist(response.data.waitlist)
+      SetWaitlist(response.data)
     }).catch(e => {
       console.log(e)
     })
@@ -51,9 +51,9 @@ const Waitlist = props => {
         {waitlist.map((waitlist, index) => {
           return (
             <tr className="tall-row">
-              <td>{index + 1}</td>
+              <td>{waitlist.position}</td>
               <td>{waitlist.name}</td>
-              <td>{waitlist.size}</td>
+              <td>{waitlist.partySize}</td>
               <td>{waitlist.waitingTime}</td>
               
               <td><div><Popup trigger={<button className=" btn btn-primary">Send Text</button>} 

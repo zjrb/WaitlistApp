@@ -2,10 +2,11 @@ import http from "../http-common.js"
 
 class WaitlistDataService {
     getAll() {
-        return http.get("/queue/getCurrentQueue");
+        return http.get("/queue");
     }
     AddCustomer(fname, phone, size, preference) {
-        return http.post("/queue", {phone, fname, size})
+        size = parseInt(size)
+        return http.post("/queue?phone_number=" + phone + "&name=" + fname + "&partySize=" + size)
     }
 }
 
