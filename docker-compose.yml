@@ -23,11 +23,13 @@
     depends_on:
       - db
   app:
-    container_name: app
-    build: .
+    container_name: backend 
+    build: 
+      context: ./backend2
+      dockerfile: Dockerfile
     command: bash -c " uvicorn main:app --host 0.0.0.0 --port 8000 --reload"
     volumes:
-      - .:/app
+      - ./backend2:/app
     ports:
       - 8000:8000
     depends_on:
